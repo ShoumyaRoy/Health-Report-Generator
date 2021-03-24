@@ -167,7 +167,7 @@
 </div>	
 
 <button type="submit" name="button" onclick="setTimeout(function() {
-    	window.location = '/index';
+    	window.location = '';
   }, 1000);" class="btn btn-success display-4">Generate Report</button>
 </form>
 
