@@ -1,4 +1,8 @@
 <html>
+<head>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <style>
 	#file-image{
 		height: 150px;
@@ -60,14 +64,24 @@
         	@endforeach
     	</select> -->
     	<div style="position: relative;">
-  		<select onchange="document.getElementById('cname').value=this.options[this.selectedIndex].text; document.getElementById('NameIdValue').value=this.options[this.selectedIndex].value;getMessage();" style="position:absolute;top:0px;left:0px; height:25px;line-height:20px;margin:0;padding:0;" data-form-field="CName" class="form-control display-7" value="">
+  		<select onchange="$.ajax({
+  			alert('hhhh');
+    	headers: {
+    'X-CSRF-TOKEN': $('meta[name=\"csrf-token\"]').attr('content')
+  }
+       type:'POST',
+       url:'/getlogo',
+       success:function(data) {
+       	alert('hhhh');
+       }
+    });document.getElementById('cname').value=this.options[this.selectedIndex].text; document.getElementById('NameIdValue').value=this.options[this.selectedIndex].value;" style="position:absolute;top:0px;left:0px; height:25px;line-height:20px;margin:0;padding:0;" data-form-field="CName" class="form-control display-7" id="selectoc" name="selectoc" value="">
   			<!-- style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" 
   			style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" -->
         @foreach ($CNameArray as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
+        <option onclick="getMessage();" value="{{ $key }}">{{ $value }}</option>
         @endforeach
   		</select>
-  		<input style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
+  		<input onchange="getMessage();" style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
   		<input name="NameIdValue" id="NameIdValue" type="text">
 		</div>
 	</div>
@@ -146,7 +160,7 @@
 <a style="float:right;" href="{{ url('table') }}" target="_blank">View Previous Consultations</a> 
 <br><br>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <script>
 function myFunction() {
 	setTimeout(function() {
@@ -166,19 +180,27 @@ function readURL(input, id) {
 		$('#start').hide();
 	}
 } 
-
+// $(document).ready(function(){
+// $("#selectoc").onchange(getMessage);
+selectoc.addEventListener('change', getMessage);
 function getMessage() {
+	alert("hhhhhhhh");
     $.ajax({
+    	headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
        type:'POST',
        url:'/getlogo',
        data:'_token = <?php echo csrf_token() ?>',
        success:function(data) {
-       	console.log(data);
-          $("#file-image").attr('src', data.target.result);
-          $('#file-image').removeClass('hidden');
+       	// console.log(data);
+       	alert("hhhh");
+          // $("#file-image").attr('src', data.target.result);
+          // $('#file-image').removeClass('hidden');
        }
     });
 }
+// });
 	// location.reload();
 // 	$(document).on('submit', 'form', function() {
 //   setTimeout(function() {

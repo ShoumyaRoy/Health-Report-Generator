@@ -149,5 +149,10 @@ public function export(Request $request)
         return response()->stream($callback, 200, $headers);
     }
 
+public function getlogo() {
+      $msg = "This is a simple message.";
+      return response()->json(array('msg'=> $msg), 200);
+}
+
 use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

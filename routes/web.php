@@ -32,4 +32,8 @@ Route::get('/download/{id}', [
    'uses' => 'Controller@download',
 ]);
 Route::get('/export', 'Controller@export');
+// Route::get('ajax',function() {
+//    return view('index');
+// });
+Route::post('/getlogo','Controller@getlogo');
 
