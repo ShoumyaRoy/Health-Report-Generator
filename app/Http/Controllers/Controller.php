@@ -150,8 +150,9 @@ public function export(Request $request)
     }
 
 public function getlogo() {
-      $msg = "This is a simple message.";
-      return response()->json(array('msg'=> $msg), 200);
+	  $rid = $_POST['NameIdValue'];
+	  $reports = Report::where('Rid', '=', $rid)->get()->toArray()[0];
+      return response()->json(array('logoname'=> $reports['Logo']), 200);
 }
 
 use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

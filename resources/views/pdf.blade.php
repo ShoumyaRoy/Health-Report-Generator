@@ -3,12 +3,17 @@
   <head>
     <style>
 div.header {
-    display: flex; text-align: center; align-items: center; justify-content: space-between;
-    position: running(header);
+    display: flex; justify-content: space-between;
+    /*position: running(header);*/
 }
-div.footer {
+/*div.footer {
     display: flex; text-align: center; align-items: center; justify-content: space-between;
     position: fixed; bottom: 0;
+}*/
+div.footer {
+    display: flex; justify-content: space-between;
+    margin-top: 100px;
+  /*position: fixed; bottom: 0;*/
 }
 table{
       min-width: 700px;
@@ -31,8 +36,8 @@ table{
   </head>
   <body>
     <div class='header'>
-      <span><img id="file-image" src="{{url('/logo/',[$reports['Logo']])}}" /></span>
-      <span>{{$reports['CName']}}</span>
+      <span><img id="file-image" src="/logo/{{ $reports['Logo'] }}" /></span>
+      <span style="float: right;display: inline-block;">{{$reports['CName']}}</span>
     </div>
     <table border=1 class="table table-bordered">
     <caption><b>Health Report</b></caption>
@@ -95,7 +100,7 @@ table{
     </table>
     <div class='footer'>
       <span>This report is generated on {{ \Carbon\Carbon::parse($reports['created_at'])->format('d/m/Y H:i:s')}} from {{$_SERVER['REMOTE_ADDR']}}</span>
-      <span>1</span>
+      <span style="float: right;display: inline-block;">1</span>
     </div>
   </body>
 </html>

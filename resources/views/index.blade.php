@@ -50,6 +50,7 @@
 <body>
 <form action="/submit" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
+@csrf
 
 <h5 class="heading align-left mbr-fonts-style"><strong>Equipo Health</strong></h5>
 
@@ -63,26 +64,28 @@
             <option value="{{ $key }}">{{ $value }}</option>
         	@endforeach
     	</select> -->
+    	<input name="NameIdValue" id="NameIdValue" type="text">
     	<div style="position: relative;">
-  		<select onchange="$.ajax({
-  			alert('hhhh');
-    	headers: {
-    'X-CSRF-TOKEN': $('meta[name=\"csrf-token\"]').attr('content')
-  }
+  		<select onchange="
+  		var NameIdValue = this.options[this.selectedIndex].value;
+  		$.ajax({    	
        type:'POST',
        url:'/getlogo',
+       data: { 'NameIdValue': NameIdValue, _token: '{{csrf_token()}}' },
        success:function(data) {
-       	alert('hhhh');
+       	console.log(data.logoname)
+        $('#file-image').removeClass('hidden');
+       	$('#file-image').attr('src', '/logo/'+data.logoname);
        }
     });document.getElementById('cname').value=this.options[this.selectedIndex].text; document.getElementById('NameIdValue').value=this.options[this.selectedIndex].value;" style="position:absolute;top:0px;left:0px; height:25px;line-height:20px;margin:0;padding:0;" data-form-field="CName" class="form-control display-7" id="selectoc" name="selectoc" value="">
   			<!-- style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" 
-  			style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" -->
+  			style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" 
+  		 style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;"-->
         @foreach ($CNameArray as $key => $value)
         <option onclick="getMessage();" value="{{ $key }}">{{ $value }}</option>
         @endforeach
   		</select>
-  		<input onchange="getMessage();" style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
-  		<input name="NameIdValue" id="NameIdValue" type="text">
+  		<input onchange="getMessage();" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
 		</div>
 	</div>
 	<div class="inside-row">
