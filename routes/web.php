@@ -17,7 +17,7 @@ use App\Http\Controllers\Controller;
 // Route::get('/index', function () {
 //     return view('index');
 // });
-Route::get('/index', [
+Route::get('', [
    'uses' => 'Controller@index',
 ]);
 // Route::post('/index', 'Controller@index');
