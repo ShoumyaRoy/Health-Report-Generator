@@ -166,7 +166,7 @@
 	</div>
 </div>	
 
-<button type="submit" name="button" onclick="myFunction();" class="btn btn-success display-4">Generate Report</button>
+<button type="submit" name="button" class="btn btn-success display-4">Generate Report</button>
 </form>
 
 <a style="float:right;" href="{{ url('table') }}" target="_blank">View Previous Consultations</a> 
@@ -174,11 +174,11 @@
 </body>
 
 <script>
-function myFunction() {
-	setTimeout(function() {
-    	window.location = "";
-  }, 1000);
-}
+// function myFunction() {
+// 	setTimeout(function() {
+//     	window.location = "";
+//   }, 1000);
+// }
 
 // function readURL(input, id) {
 // 	id = id || '#file-image';
