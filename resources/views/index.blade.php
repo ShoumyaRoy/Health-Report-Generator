@@ -64,7 +64,6 @@
             <option value="{{ $key }}">{{ $value }}</option>
         	@endforeach
     	</select> -->
-    	<input name="NameIdValue" id="NameIdValue" type="text">
     	<div style="position: relative;">
   		<select onchange="
   		var NameIdValue = this.options[this.selectedIndex].value;
@@ -87,6 +86,7 @@
   		</select>
   		<input style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;" onchange="getMessage();" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
 		</div>
+    	<input name="NameIdValue" id="NameIdValue" type="text">
 	</div>
 	<div class="inside-row">
 		<label for="logo">Clinic Logo</label>
