@@ -69,4 +69,3 @@
    }
   </script>
 </html>
-<!-- "{{url('/logo/',[$valuee])}}" -->
