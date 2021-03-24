@@ -90,7 +90,16 @@
 	</div>
 	<div class="inside-row">
 		<label for="logo">Clinic Logo</label>
-		<input id="logo" type="file" name="Logo" accept="image/*" onchange="readURL(this);" data-form-field="Logo" class="form-control display-7" required="required" value="">
+		<input id="logo" type="file" name="Logo" accept="image/*" onchange="id = id || '#file-image';
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			$(id).attr('src', e.target.result);
+		};
+		reader.readAsDataURL(input.files[0]);
+		$('#file-image').removeClass('hidden');
+		$('#start').hide();
+	}" data-form-field="Logo" class="form-control display-7" required="required" value="">
         <img id="file-image" name="Logo" src="#" alt="Preview" class="hidden">
         <div id="start" >
             <i class="fa fa-download" aria-hidden="true"></i>
@@ -157,7 +166,9 @@
 	</div>
 </div>	
 
-<button type="submit" name="button" onclick="myFunction()" class="btn btn-success display-4">Generate Report</button>
+<button type="submit" name="button" onclick="setTimeout(function() {
+    	window.location = '/index';
+  }, 1000);" class="btn btn-success display-4">Generate Report</button>
 </form>
 
 <a style="float:right;" href="{{ url('table') }}" target="_blank">View Previous Consultations</a> 
@@ -165,44 +176,43 @@
 </body>
 
 <script>
-function myFunction() {
-	setTimeout(function() {
-    	window.location = "/index";
-  }, 1000);
-}
+// function myFunction() {
+// 	setTimeout(function() {
+//     	window.location = "/index";
+//   }, 1000);
+// }
 
-function readURL(input, id) {
-	id = id || '#file-image';
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
-		reader.onload = function (e) {
-			$(id).attr('src', e.target.result);
-		};
-		reader.readAsDataURL(input.files[0]);
-		$('#file-image').removeClass('hidden');
-		$('#start').hide();
-	}
-} 
+// function readURL(input, id) {
+// 	id = id || '#file-image';
+// 	if (input.files && input.files[0]) {
+// 		var reader = new FileReader();
+// 		reader.onload = function (e) {
+// 			$(id).attr('src', e.target.result);
+// 		};
+// 		reader.readAsDataURL(input.files[0]);
+// 		$('#file-image').removeClass('hidden');
+// 		$('#start').hide();
+// 	}
+// } 
 // $(document).ready(function(){
 // $("#selectoc").onchange(getMessage);
-selectoc.addEventListener('change', getMessage);
-function getMessage() {
-	alert("hhhhhhhh");
-    $.ajax({
-    	headers: {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-       type:'POST',
-       url:'/getlogo',
-       data:'_token = <?php echo csrf_token() ?>',
-       success:function(data) {
-       	// console.log(data);
-       	alert("hhhh");
-          // $("#file-image").attr('src', data.target.result);
-          // $('#file-image').removeClass('hidden');
-       }
-    });
-}
+// selectoc.addEventListener('change', getMessage);
+// function getMessage() {
+// 	alert("hhhhhhhh");
+//     $.ajax({
+//     	headers: {
+//     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//   }
+//        type:'POST',
+//        url:'/getlogo',
+//        success:function(data) {
+//        	console.log(data);
+//        	alert("hhhh");
+//           $("#file-image").attr('src', data.target.result);
+//           $('#file-image').removeClass('hidden');
+//        }
+//     });
+// }
 // });
 	// location.reload();
 // 	$(document).on('submit', 'form', function() {
