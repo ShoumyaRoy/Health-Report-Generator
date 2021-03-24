@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
+	protected $primaryKey = 'Rid';
     use HasFactory;
 }

@@ -58,6 +58,7 @@ public function submit(request $request) {
 // $request->input('Consultation'),
 // ]);
 // return redirect()->action('Controller@index')->with('status', 'Your Message Sent Successfully !');
+	// $count = 0;
 	$reports = new Report();
 	// dd($reports->Logo);
 
@@ -73,6 +74,7 @@ public function submit(request $request) {
        $reports->Logo = $imagename;
     }
  	// dd("fail");
+ 	// $reports->Rid = $count++;
     $reports->CName = request('CName');
 	// $reports->Logo = request('Logo');
     $reports->DName = request('DName');
