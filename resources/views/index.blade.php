@@ -66,7 +66,8 @@
     	</select> -->
     	<div style="position: relative;">
   		<select onchange="
-  		var NameIdValue = this.options[this.selectedIndex].value;
+  		var NameIdValue = parseInt(this.options[this.selectedIndex].value)+1;
+  		console.log(NameIdValue);
   		$.ajax({    	
        type:'POST',
        url:'/getlogo',
