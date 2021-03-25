@@ -189,7 +189,7 @@ function myFunction() {
     	$('input[name=PContact').val('');
     	$('textarea[name=Complaint').val('');
     	$('textarea[name=Consultation').val('');
-    	window.location = "";
+    	// window.location = "";
   }, 5000);
 }
 
