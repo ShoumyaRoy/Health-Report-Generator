@@ -57,7 +57,7 @@
         </td>
         @endif
         @endforeach
-        <td><a href="{{ url('download', [$myvar]) }}" target="_blank">Download</a></td>
+        <td><a href="{{ url('download', [$myvar]) }}">Download</a></td>
       </tr>
       @endforeach
     </table>

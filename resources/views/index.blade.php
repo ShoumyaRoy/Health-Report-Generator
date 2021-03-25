@@ -171,7 +171,7 @@
 <button type="submit" name="button" onclick="myFunction();" class="btn btn-success display-4">Generate Report</button>
 </form>
 
-<a style="float:right;" href="{{ url('table') }}" target="_blank">View Previous Consultations</a> 
+<a style="float:right;" href="{{ url('table') }}">View Previous Consultations</a> 
 <br><br>
 </body>
 
