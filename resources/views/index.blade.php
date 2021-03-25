@@ -130,7 +130,7 @@
 	</div>
 	<div class="inside-row">
 		<label for="dcontact">Physician Contact</label>
-		<input type="tel" pattern="^\d{10}$" name="DContact" id="dcontact" placeholder="Physician Contact" data-form-field="DContact" required="required" class="form-control display-7" value="">
+		<input type="text" pattern="^\d{10}$" name="DContact" id="dcontact" placeholder="Physician Contact" data-form-field="DContact" required="required" class="form-control display-7" value="">
 	</div>
 </div>	
 
@@ -151,7 +151,7 @@
 	</div>
 	<div class="inside-row">
 		<label for="pcontact">Patient Contact</label>
-		<input type="tel" pattern="^\d{10}$" name="PContact" id="pcontact" placeholder="Patient Contact" data-form-field="PContact" class="form-control display-7" required="required" value="">
+		<input type="text" pattern="^\d{10}$" name="PContact" id="pcontact" placeholder="Patient Contact" data-form-field="PContact" class="form-control display-7" required="required" value="">
 	</div>
 </div>	
 <div class="row">
