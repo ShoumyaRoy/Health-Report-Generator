@@ -130,7 +130,7 @@
 	</div>
 	<div class="inside-row">
 		<label for="dcontact">Physician Contact</label>
-		<input type="tel" name="DContact" id="dcontact" placeholder="Physician Contact" data-form-field="DContact" required="required" class="form-control display-7" value="">
+		<input type="tel" pattern="^\d{10}$" name="DContact" id="dcontact" placeholder="Physician Contact" data-form-field="DContact" required="required" class="form-control display-7" value="">
 	</div>
 </div>	
 
@@ -151,7 +151,7 @@
 	</div>
 	<div class="inside-row">
 		<label for="pcontact">Patient Contact</label>
-		<input type="tel" name="PContact" id="pcontact" placeholder="Patient Contact" data-form-field="PContact" class="form-control display-7" required="required" value="">
+		<input type="tel" pattern="^\d{10}$" name="PContact" id="pcontact" placeholder="Patient Contact" data-form-field="PContact" class="form-control display-7" required="required" value="">
 	</div>
 </div>	
 <div class="row">
@@ -176,10 +176,21 @@
 
 <script>
 function myFunction() {
-	setTimeout(function() {
-    	$('input[name=CName').val('');
+	// setTimeout(function() {
+    	// $('input[name=CName').val('');
+    	// $('input[name=Logo').val('');
+    	// $('img[name=Logo').val('');
+		// $('#file-image').addClass('hidden');
+    	// $('input[name=DName').val('');
+    	// $('input[name=DContact').val('');
+    	// $('input[name=PFName').val('');
+    	// $('input[name=PLName').val('');
+    	// $('input[name=PDOB').val('');
+    	// $('input[name=PContact').val('');
+    	// $('textarea[name=Complaint').val('');
+    	// $('textarea[name=Consultation').val('');
     	// window.location = "";
-  }, 1000);
+  // }, 5000);
 }
 
 // function readURL(input, id) {
