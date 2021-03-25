@@ -81,6 +81,7 @@
   			<!-- style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" 
   			style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" 
   		 style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;"-->
+  		<option></option>
         @foreach ($CNameArray as $key => $value)
         <option onclick="getMessage();" value="{{ $key }}">{{ $value }}</option>
         @endforeach
