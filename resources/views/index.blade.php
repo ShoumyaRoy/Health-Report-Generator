@@ -176,21 +176,21 @@
 
 <script>
 function myFunction() {
-	// setTimeout(function() {
-    	// $('input[name=CName').val('');
-    	// $('input[name=Logo').val('');
-    	// $('img[name=Logo').val('');
-		// $('#file-image').addClass('hidden');
-    	// $('input[name=DName').val('');
-    	// $('input[name=DContact').val('');
-    	// $('input[name=PFName').val('');
-    	// $('input[name=PLName').val('');
-    	// $('input[name=PDOB').val('');
-    	// $('input[name=PContact').val('');
-    	// $('textarea[name=Complaint').val('');
-    	// $('textarea[name=Consultation').val('');
-    	// window.location = "";
-  // }, 5000);
+	setTimeout(function() {
+    	$('input[name=CName').val('');
+    	$('input[name=Logo').val('');
+    	$('img[name=Logo').val('');
+		$('#file-image').addClass('hidden');
+    	$('input[name=DName').val('');
+    	$('input[name=DContact').val('');
+    	$('input[name=PFName').val('');
+    	$('input[name=PLName').val('');
+    	$('input[name=PDOB').val('');
+    	$('input[name=PContact').val('');
+    	$('textarea[name=Complaint').val('');
+    	$('textarea[name=Consultation').val('');
+    	window.location = "";
+  }, 5000);
 }
 
 // function readURL(input, id) {
