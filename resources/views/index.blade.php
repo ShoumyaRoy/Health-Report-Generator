@@ -85,7 +85,7 @@
         <option onclick="getMessage();" value="{{ $key }}">{{ $value }}</option>
         @endforeach
   		</select>
-  		<input style="position:absolute;top:0px;left:0px;width:87%;height:23px; height:21px\9;#height:18px;" onchange="getMessage();" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
+  		<input style="position:absolute;top:0px;left:0px;width:86%;height:23px; height:21px\9;#height:18px;" onchange="getMessage();" type="text" name="CName" id="cname" placeholder="Clinic Name" onfocus="this.select()" data-form-field="CName" class="form-control display-7" value="">
 		</div>
     	<input name="NameIdValue" id="NameIdValue" type="text">
 	</div>
@@ -167,7 +167,7 @@
 	</div>
 </div>	
 
-<button type="submit" name="button" class="btn btn-success display-4">Generate Report</button>
+<button type="submit" name="button" onclick="myFunction();" class="btn btn-success display-4">Generate Report</button>
 </form>
 
 <a style="float:right;" href="{{ url('table') }}" target="_blank">View Previous Consultations</a> 
@@ -175,11 +175,12 @@
 </body>
 
 <script>
-// function myFunction() {
-// 	setTimeout(function() {
-//     	window.location = "";
-//   }, 1000);
-// }
+function myFunction() {
+	setTimeout(function() {
+    	$('input[name=CName').val('');
+    	// window.location = "";
+  }, 1000);
+}
 
 // function readURL(input, id) {
 // 	id = id || '#file-image';
