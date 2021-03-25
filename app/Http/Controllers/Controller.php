@@ -69,7 +69,7 @@ public function submit(request $request) {
    if ($files = $request->file('Logo')) {
        // dd($files->getClientOriginalExtension());
        $destinationPath = 'logo/'; // upload path
-       $imagename = 'Logo'.request('CName').".".date('YmdHis').".".$files->getClientOriginalExtension();
+       $imagename = 'Logo'.".".request('CName').".".date('YmdHis').".".$files->getClientOriginalExtension();
        $files->move($destinationPath, $imagename);
        $reports->Logo = $imagename;
     }
